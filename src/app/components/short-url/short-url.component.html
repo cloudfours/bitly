@@ -1,0 +1,23 @@
+<div *ngIf="mostrarError" class="alert alert-dismissible alert-danger">
+
+    <strong>{{textError}}</strong> 
+  </div>
+<div class="container mt-3">
+    <h1 class="display-5 text-center">
+INGRESE LA URL A CORTAR
+    </h1>
+    <div class="row">
+        <div class="col-lg-8 mt-5">
+<input type="text" [(ngModel)]="nombreUrl" class="form-control form-control-lg" placeholder='Ingrese url'>
+        </div>
+        <div class="col-lg-4 mt-5">
+<button (click)='procesarUrl()' type="button" name="" id="" class="btn btn-primary btn-block btn-lg" >Cortar link</button>
+        </div>
+    </div>
+    <div class="row mt-3">
+<div *ngIf="urlProcesada" class="col-lg-8">
+<input type="text" placeholder="url procesada" class="form-control form-control-lg" [(ngModel)]="urlShort"/>
+</div>
+    </div>
+    <app-sipnner *ngIf="loading"></app-sipnner>
+</div>
